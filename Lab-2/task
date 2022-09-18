@@ -1,0 +1,26 @@
+#!/bin/sh
+echo "input diamond size"
+
+read size
+
+if [ $size -lt 3 ]; then
+	echo "size needs to be greater than three."
+	exit 1
+fi
+
+
+if [ $size % 2 eq- 0 ]; then
+	echo "size needs to be an odd integer."
+	exit 1
+fi
+
+
+for i in 1...$size;
+do
+	for j in 1...$size;
+	do
+		echo "*"
+	done
+done
+
+exit 0
