@@ -1,0 +1,52 @@
+Task 1:
+	(base) ${debian_chroot:+($debian_chroot)}\u@\h:\w\$
+	echo $EDITOR: NO VALUE
+	echo $HOME: /mnt/linuxlab/home/jmontebell2
+	echo $HOSTNAME: hpcl1-2
+	echo $LD_LIBRARY_PATH: /usr/local/cuda-11.6/lib64:/usr/lib/cuda/lib64:/usr/lib/cuda/include:/lib/x86_64-linux-gnu/slurm-wlm/
+	echo $LESS: NO VALUE
+	echo $MAIL: NO VALUE
+	echo $MANPATH: :/opt/puppetlabs/puppet/share/man
+	echo $MORE: NO VALUE
+	echo $PAGER: NO VALUE
+	echo $PATH: /mnt/linuxlab/home/jmontebell2/anaconda3/bin:/mnt/linuxlab/home/jmontebell2/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:~/bin:/usr/local/cuda/bin:/opt/hadoop-3.3.3/bin:/opt/hadoop-3.3.3/sbin:/opt/puppetlabs/bin
+	echo $PWD: /mnt/linuxlab/home/jmontebell2
+	echo $SHELL: /bin/bash
+	echo $TERM: xterm-256color
+	echo $USER: jmontebell2
+	
+Task 2:
+	export TEMP=$PS1
+	export TEMP="[COSC350 $PWD]:"
+	export TEMP=$PS1
+Task 4:
+	ls mikey > bar
+	ls mikey > /dev/null
+	echo -e "3\n5\n2\n1" > foo
+	cat foo > bar
+	sort foo, numbers are numeric
+	sort foo > bar
+Task 5:
+	seq 1 100 > numbs, the seq function just like in a for loop for
+	a shell script, iterates 1-100 and im sending those iterations to the 		file numbs.
+	
+	100 100 292 numbs, number of newlines, words and byte counts
+	sed -n '25, 38p' numbs > somenumbs
+	14 14 42 somenumbs, number of newlines, words and byte counts
+Task 6:
+	
+	
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
