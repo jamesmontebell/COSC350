@@ -3,7 +3,11 @@
 echo "Enter directory: "
 read direc
 
-if [ ! -d "$direc" ] ; then
+if [ $(expr substr $direc 1 1) = "~" ] ; then
+    direc=$HOME
+fi
+
+if [ ! -d $direc ] ; then
     echo "1 no such directory"
     exit 1
 fi
