@@ -1,8 +1,8 @@
-echo "input right-arrow size"
+echo "input left-arrow size"
 
 read size
 
-echo "input right-arrow tail size"
+echo "input left-arrow tail size"
 
 read tail
 
@@ -27,15 +27,14 @@ do
 	continue
 	fi
     # print spaces
-    tail1=$(expr $tail \* 2)
-	for j in $(seq 1 $size) # j = i; j <= size; j++
+	for j in $(seq $i $size) # j = i; j <= size; j++
     do
       echo " \c";
     done
 	# print stars
 	for k in $(seq 1 $i) # k = 1; i <= i; k++
     do
-	if [ $k -eq $tail ] ; then
+	if [ $k -eq $size ] ; then
 		for p in $(seq 1 $tail)
 		do
 			echo "*\c"
@@ -52,7 +51,7 @@ do
 		continue
 	fi
     # print spaces
-	for j in $(seq $1 $tail1) # j = i; j <= size; j++
+	for j in $(seq $size -1 $i) # j = i; j <= size; j++
     do
       echo " \c";
     done

@@ -1,3 +1,5 @@
+James Montebell
+
 Task 1:
 	(base) ${debian_chroot:+($debian_chroot)}\u@\h:\w\$
 	echo $EDITOR: NO VALUE
@@ -33,8 +35,305 @@ Task 5:
 	100 100 292 numbs, number of newlines, words and byte counts
 	sed -n '25, 38p' numbs > somenumbs
 	14 14 42 somenumbs, number of newlines, words and byte counts
+
 Task 6:
+
+task6a.sh
+
+DIamond ----------------------------------------------
+
+#!/bin/sh
+echo "input diamond size"
+
+read size
+
+if [ $size -lt 3 ]; then
+	echo "size needs to be greater than three."
+	exit 1
+fi
+
+
+if [ $(expr $size % 2) -eq "0" ] ; then
+	echo "size needs to be an odd integer."
+	exit 1
+fi
+
+
+for i in $(seq 1 $size) # i = 1; i <= size; i++
+do
+	if [ $(expr $i % 2) -eq "0" ] ; then
+		continue
+	fi
+    # print spaces
+	for j in $(seq $i $size) # j = i; j <= size; j++
+    do
+      echo -n " ";
+    done
+	# print stars
+	for k in $(seq 1 $i) # k = 1; i <= i; k++
+    do
+      echo -n "* ";
+    done
+    echo;
+done
+size1=$(expr $size - 1)
+for i in $(seq $size1 -1 1) # i = 1; i <= size; i++
+do
+	if [ $(expr $i % 2) -eq "0" ] ; then
+		continue
+	fi
+    # print spaces
+	for j in $(seq $size -1 $i) # j = i; j <= size; j++
+    do
+      echo -n " ";
+    done
+	# print stars
+	for k in $(seq $i -1 1) # k = 1; i <= i; k++
+    do
+      echo -n "* ";
+    done
+	echo
+done
+
+task6b.sh
+
+LEFT ARROW ---------------------------
+
+echo "input left-arrow size"
+
+read size
+
+echo "input left-arrow tail size"
+
+read tail
+
+if [ $size -lt 3 ]; then
+	echo "size needs to be greater than three."
+	exit 1
+fi
+
+if [ $(expr $size % 2) -eq "0" ] ; then
+	echo "size needs to be an odd integer."
+	exit 1
+fi
+
+if [ $(expr $tail % 2) -eq "0" ] ; then
+	echo "tail size needs to be an odd integer."
+	exit 1
+fi
+
+for i in $(seq 1 $size) # i = 1; i <= size; i++
+do
+	if [ $(expr $i % 2) -eq "0" ] ; then
+	continue
+	fi
+    # print spaces
+	for j in $(seq $i $size) # j = i; j <= size; j++
+    do
+      echo " \c";
+    done
+	# print stars
+	for k in $(seq 1 $i) # k = 1; i <= i; k++
+    do
+	if [ $k -eq $size ] ; then
+		for p in $(seq 1 $tail)
+		do
+			echo "*\c"
+		done
+	fi
+      echo "*\c";
+    done
+    echo;
+done
+size1=$(expr $size - 1)
+for i in $(seq $size1 -1 1) # i = 1; i <= size; i++
+do
+	if [ $(expr $i % 2) -eq "0" ] ; then
+		continue
+	fi
+    # print spaces
+	for j in $(seq $size -1 $i) # j = i; j <= size; j++
+    do
+      echo " \c";
+    done
+	# print stars
+	for k in $(seq $i -1 1) # k = 1; i <= i; k++
+    do
+      echo "*\c";
+    done
+	echo
+done
+
+task6c.sh
+
+RIGHT ARROW ---------------------------------------
+
+echo "input right-arrow size"
+
+read size
+
+echo "input right-arrow tail size"
+
+read tail
+
+if [ $size -lt 3 ]; then
+	echo "size needs to be greater than three."
+	exit 1
+fi
+
+if [ $(expr $size % 2) -eq "0" ] ; then
+	echo "size needs to be an odd integer."
+	exit 1
+fi
+
+if [ $(expr $tail % 2) -eq "0" ] ; then
+	echo "tail size needs to be an odd integer."
+	exit 1
+fi
+
+for i in $(seq 1 $size) # i = 1; i <= size; i++
+do
+	if [ $(expr $i % 2) -eq "0" ] ; then
+	continue
+	fi
+    # print spaces
+	for j in $(seq 1 $(expr $tail )) # j = i; j <= size; j++
+    do
+		if [ $i -eq $size ] ; then
+		continue
+		fi
+      echo " \c";
+    done
+	# print stars
+	for k in $(seq 1 $i) # k = 1; i <= i; k++
+    do
+	if [ $k -eq $size ] ; then
+		for p in $(seq 1 $tail)
+		do
+			echo "*\c"
+		done
+	fi
+      echo "*\c";
+    done
+    echo;
+done
+size1=$(expr $size - 1)
+for i in $(seq $size1 -1 1) # i = 1; i <= size; i++
+do
+	if [ $(expr $i % 2) -eq "0" ] ; then
+		continue
+	fi
+    # print spaces
+	for j in $(seq $(expr $tail ) -1 1) # j = i; j <= size; j++
+    do
+      echo " \c";
+    done
+	# print stars
+	for k in $(seq $i -1 1) # k = 1; i <= i; k++
+    do
+      echo "*\c";
+    done
+	echo
+done
+
+exit 0
 	
+
+Task 7: -------------------------------------------
+
+#!/bin/sh
+
+echo "Calculate Factorial: "
+
+read num
+
+tot=1
+
+while [ $num != "0" ] ;
+do
+    tot=$(expr $tot \* $num)
+    num=$(expr $num - 1)
+done
+
+echo "$tot"
+
+exit 0
+
+Task 8: -------------------------------------------------
+
+	#!/bin/sh
+
+echo "Enter integer: "
+
+read num
+
+sum=0
+
+if [ -z $num ]; then
+    echo "You need to pass one numerical argument."
+fi
+
+while [ $num -gt "0" ] ; 
+do
+    k=$(expr $num % 10)
+    sum=$(expr $sum + $k)
+    num=$(expr $num / 10)
+done
+
+echo "The sum is $sum."
+
+exit 0
+
+Task 9: -------------------------------------
+
+	#!/bin/sh
+
+echo "Enter directory: "
+read direc
+
+if [ $(expr substr $direc 1 1) = "~" ] ; then
+    direc=$HOME
+fi
+
+if [ ! -d $direc ] ; then
+    echo "1 no such directory"
+    exit 1
+fi
+
+
+try=3
+while [ $try -gt 0 ] ;
+do
+    echo "Enter valid filename: "
+    read name
+    name=$direc/$name
+    if [ -f "$name" ] ; then
+        if [ ! -r $name ] ; then
+            echo "3 file is not readable."
+            exit 3
+        fi
+        try=$(expr $try - 3)
+        break
+    fi
+    try=$(expr $try - 1)
+    if [ $try = 0 ] ; then
+        echo "2 no such file (after three attempts)"
+        exit 2
+    fi
+done
+
+echo "Enter word to find in file: "
+read word
+
+if grep -q $word $name ; then
+    echo "$word FOUND!"
+else
+    echo "$word NOT FOUND!"
+    echo "4 word not found"
+fi
+
+
+exit 0
 	
 
 	
