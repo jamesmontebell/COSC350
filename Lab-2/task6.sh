@@ -24,12 +24,12 @@ do
     # print spaces
 	for j in $(seq $i $size) # j = i; j <= size; j++
     do
-      echo -n " ";
+      echo  " \c ";
     done
 	# print stars
 	for k in $(seq 1 $i) # k = 1; i <= i; k++
     do
-      echo -n "* ";
+      echo  "* \c ";
     done
     echo;
 done
@@ -42,22 +42,14 @@ do
     # print spaces
 	for j in $(seq $size -1 $i) # j = i; j <= size; j++
     do
-      echo -n " ";
+      echo  " \c ";
     done
 	# print stars
 	for k in $(seq $i -1 1) # k = 1; i <= i; k++
     do
-      echo -n "* ";
+      echo  "* \c ";
     done
 	echo
 done
-
-echo "#############################"
-
-# Left-Arrow ----------------------------------------------
-
-
-
-# Right-Arrow ----------------------------------------------
 
 exit 0
