@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h> /*STDIN_FILENO, STDOUT_FILENO*/
+#define FILE_MODE (S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP)
 
-#define BUFFER_SIZE 32
 void err_sys(char *str)
 {
     printf("%s", str);
@@ -14,19 +14,29 @@ void err_sys(char *str)
 int main()
 {
     int foo, foo1, foo12, offset;
-    char buffer[BUFFER_SIZE];
-#define FILE_MODE (S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP)
+    char buffer;
 
-    foo = open("foo.txt", O_RDWR);
-    foo1 = open("foo1.txt", O_RDWR);
-    foo12 = open("foo12.txt", O_RDWR | O_CREAT | O_EXCL, FILE_MODE);
+    if((foo = open("foo.txt", O_RDWR)) < 0)
+    {
+        err_sys("error");
+    }
+
+    if((foo1 = open("foo1.txt", O_RDWR)) < 0)
+    {
+        err_sys("error");
+    }
+
+    if((foo12 = open("foo12.txt", O_RDWR | O_CREAT | O_EXCL, FILE_MODE)) < 0)
+    {
+        err_sys("error");
+    }
 
     if (foo != -1)
     {
         printf("foo.txt opened for read access\n");
-        while ((read(foo, buffer, 1) > 0))
+        while ((read(foo, &buffer, 1) > 0))
         {
-            write(foo12, buffer, foo);
+            write(foo12, &buffer, 1);
         }
         if ((offset = lseek (foo12, 0, SEEK_CUR))== -1)
         {
@@ -36,9 +46,9 @@ int main()
         printf("Copied contents of foo1.txt to foo12.txt");
         
         printf("foo.txt opened for read access\n");
-        while ((read(foo1, buffer, 1) > 0))
+        while ((read(foo1, &buffer, 1) > 0))
         {
-            write(foo12, buffer, foo1);
+            write(foo12, &buffer, 1);
         }
         printf("Copied contents of foo.txt to foo12.txt");
     }
