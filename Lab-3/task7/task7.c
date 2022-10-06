@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 int Atoi(char *num)
 {
@@ -8,7 +7,7 @@ int Atoi(char *num)
     int sign = 1;
     int i = 0;
 
-    if (num[0] == "-")
+    if (num[0] == '-')
     {   
         sign = -1;
         i++;
@@ -31,11 +30,11 @@ int main(int argc, char *argv[])
     }
 
     int sum = 0;
-    int nums[argc];
+    int nums[argc - 1];
 
-    for (int i = 1; i < argc; i++)
+    for (int i = 0; i < argc - 1; i++)
     {
-        nums[i] = Atoi(argv[i]);
+        nums[i] = Atoi(argv[i+1]);
         printf("%d\n", nums[i]);
     }
     for(int i = 0; i < argc ; i++)
