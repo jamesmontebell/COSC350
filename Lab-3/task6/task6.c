@@ -13,9 +13,10 @@ void err_sys(char *str)
 }
 int main()
 {
-    int n;
+    int n, offset;
     int foo, foorev;
     char buffer;
+    struct stat buf;
 
     if((foo = open("foo.txt", O_RDONLY)) < 0)
     {
@@ -34,7 +35,10 @@ int main()
 
     printf("foo.txt opened for read access\n");
 
-    for(int i = foo, j = 0; i >=0; i--, j++ )
+    fstat(foo, &buf);
+    off_t size = buf.st_size;
+
+    for(int i = size-1; i >=0; i--)
     {
         // if ((lseek(foo, i, SEEK_SET)) < 0)
         // {
@@ -44,7 +48,7 @@ int main()
         {
             err_sys("error");
         }
-        if((n = pwrite(foorev, &buffer, 1, j)) < 0)
+        if((n = write(foorev, &buffer, 1)) < 0)
         {
             err_sys("error");
         }
