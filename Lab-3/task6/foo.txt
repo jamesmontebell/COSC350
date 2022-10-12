@@ -1,1 +1,64 @@
-abcdefg
+}
+;)0( tixe    
+;)veroof(esolc    
+;)oof(esolc    
+}    
+}        
+;)"rorre"(sys_rre            
+{        
+)0 < ))1 ,reffub& ,veroof(etirw = n((fi        
+}        
+;)"rorre"(sys_rre            
+{        
+)0 < ))i ,1 ,reffub& ,oof(daerp = n((fi        
+} //        
+;)"rorre"(sys_rre     //        
+{ //        
+)0 < ))TES_KEES ,i ,oof(keesl(( fi //        
+{    
+)--i ;0=> i ;1-ezis = i tni(rof    
+
+;ezis_ts.fub = ezis t_ffo    
+;)fub& ,oof(tatsf    
+
+;)"n\ssecca daer rof denepo txt.oof"(ftnirp    
+
+} //    
+;)"rorre"(sys_rre     //    
+{ //    
+)1- ==))DNE_KEES ,0 ,oof( keesl = tesffo(( fi //    
+
+}    
+;)"rorre"(sys_rre        
+{    
+)0 < ))EDOM_ELIF ,LCXE_O | TAERC_O | RWDR_O ,"txt.veroof"(nepo = veroof((fi    
+
+}    
+;)"rorre"(sys_rre        
+{    
+)0 < ))YLNODR_O ,"txt.oof"(nepo = oof((fi    
+
+;fub tats tcurts    
+;reffub rahc    
+;veroof ,oof tni    
+;tesffo ,n tni    
+{
+)(niam tni
+}
+;)1(tixe    
+;)rts ,"s%"(ftnirp    
+{
+)rts* rahc(sys_rre diov
+.veroof ot etyb yb etyb //
+setirw etirw neht ,oof elif eht daer dna tesffo taht tes ot daerp esu dna //
+elif fo dne eht morf tesffo eht tnemerced ot pool rof a ni desu si hcihw //
+)(tatsf gnisu tats ezis eht teg ,fub tcurts detaerc eht htiw //
+.detaerc ydaerla ton sti fi veroof elif a setaerc neht //
+,oof elif detaerc ydaerla eht snepo 5ksat //
+)PRGWI_S | PRGRI_S | RSUXI_S | RSUWI_S | RSURI_S( EDOM_ELIF enifed#
+/*ONELIF_TUODTS ,ONELIF_NIDTS*/ >h.dtsinu< edulcni#
+>h.bildts< edulcni#
+>h.oidts< edulcni#
+/* ETIRWI_S & DAERI_S senifed */  >h.tats/sys< edulcni#
+/* h.tats/sys yb desu sepyt senifed */ >h.sepyt/sys< edulcni#
+/* sgalf snoitpo senifed */     >h.ltncf< edulcni#
