@@ -1,0 +1,114 @@
+ include  unistd h 
+  include  fcntl h 
+  include  ctype h 
+  include  stdio h 
+  include  string h 
+  include  sys stat h 
+  include  stdlib h 
+ 
+ void err sys char  str 
+  
+     printf   s   str  
+     exit    
+  
+ 
+ int main int argc  char  argv   
+  
+     if  argc     
+      
+         err sys  arg arror   
+      
+ 
+     int in  a  n  o  c 
+     char buf 
+ 
+     if  in   open argv    O RDONLY        
+      
+         err sys  file in error   
+      
+     if  a   open argv    O RDWR   O CREAT              
+      
+         err sys  file a error   
+      
+     if  n   open argv    O RDWR   O CREAT              
+      
+         err sys  file n error   
+      
+     if  o   open argv    O RDWR   O CREAT              
+      
+         err sys  file o error   
+      
+     if  c   open argv    O RDWR   O CREAT              
+      
+         err sys  file c error   
+      
+ 
+     
+ 
+     while  read in   buf          
+      
+         if  int buf       
+          
+             write a   buf     
+             write n   buf     
+             write o   buf     
+          
+            if  int buf       
+             
+                write a   buf     
+                write n   buf     
+                write o   buf     
+             
+         if  int buf           int buf            int buf           int buf       
+          
+             write a   buf     
+          
+         else
+          
+             write a          
+          
+         if  int buf           int buf       
+          
+             write n   buf     
+          
+         else
+          
+             write n          
+          
+         if  int buf           int buf           int buf           int buf           int buf           int buf           int buf            int buf        
+          
+             write o   buf     
+          
+         else
+          
+             write o          
+          
+      
+     
+     if  lseek a     SEEK SET       
+      
+         err sys  lseek error   
+      
+ 
+     while  read a   buf          
+      
+         write c   buf     
+      
+     if  lseek n     SEEK SET       
+      
+         err sys  lseek error   
+      
+     while  read n   buf          
+      
+         write c   buf     
+      
+ 
+     close in  
+     close a  
+     close n  
+     close o  
+     close c  
+ 
+     return   
+ 
+  

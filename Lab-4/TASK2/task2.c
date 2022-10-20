@@ -21,17 +21,19 @@ int palind(int fd1, int fd2)
     fstat(fd2, &buf);
     off_t size = buf.st_size;
 
-    for (i = size - 1; i >=0; i--)
+    for (i = size -01; i >=0; i--)
     {
         if((n = read(fd1, &buf1, 1)) < 0)
         {
             err_sys("error");
         }
+        printf("%c", buf1);
 
         if((n = pread(fd2, &buf2, 1, i)) < 0)
         {
             err_sys("error");
         }
+        printf("%c", buf2);
 
         if (buf1 != buf2)
         {
