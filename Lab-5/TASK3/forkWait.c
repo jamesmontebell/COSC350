@@ -77,4 +77,5 @@ int main(int argc, char *argv[])
         else
             printf("Child terminated abnormally\n");
     }
+    exit(exit_code);
 }

@@ -1,0 +1,87 @@
+#include <fcntl.h>     /* defines options flags */
+#include <sys/types.h> /* defines types used by sys/stat.h */
+#include <sys/stat.h>  /* defines S_IREAD & S_IWRITE */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h> /*STDIN_FILENO, STDOUT_FILENO*/
+
+int isDigit(int c)
+{
+    if (c >=  && c <= )
+    {
+        return ;
+    }
+    else
+    {
+        return ;
+    }
+}
+
+void err_sys(char *str)
+{
+    printf("%s", str);
+    exit();
+}
+
+int main(int argc, char *argv[])
+{
+    if (argc != )
+    {
+        err_sys("input error");
+    }
+
+    int in;
+    int parentOut, childOut;
+    int pOff = ;
+    int cOff = ;
+    int pid;
+    char buf;
+    int exit_code;
+
+    if ((in = open(argv[], O_RDWR)) < )
+    {
+        err_sys("error");
+    }
+    if ((parentOut = open("parent.txt", O_WRONLY | O_CREAT | O_EXCL, )) < )
+    {
+        err_sys("error");
+    }
+    if ((childOut = open("child.txt", O_WRONLY | O_CREAT | O_EXCL, )) < )
+    {
+        err_sys("error");
+    }
+
+    pid = fork();
+
+    switch (pid)
+    {
+
+    case -:
+        err_sys("error");
+        exit();
+    case :
+        exit_code = ;
+        while (pread(in, &buf, , cOff) == )
+        {
+            if (isDigit(buf) == )
+            {
+                write(childOut, &buf, );
+            }
+            cOff++;
+        }
+        break;
+    default:
+        exit_code = ;
+        while (pread(in, &buf, , pOff) == )
+        {
+            if (isDigit(buf) == )
+            {
+                write(parentOut, &buf, );
+            }
+            pOff++;
+        }
+
+        break;
+    }
+    exit(exit_code);
+}
