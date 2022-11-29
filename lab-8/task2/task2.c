@@ -8,12 +8,12 @@ int size = 0;
 
 void *t1(void* arg)
 {
-    int test[20];
+    int test[9];
 	int score, nread, i;
 	char buffer[BUFSIZ];
 
 	printf("Enter a test score\n");
-	while(size < 20 && (nread=read(0, &buffer, BUFSIZ))>0)
+	while(size < 9 && (nread=read(0, &buffer, BUFSIZ))>0)
 	{
 		sscanf(buffer, "%d", &score);
 		test[size] = score;
@@ -36,7 +36,7 @@ void *t2(void* arg)
     {
         sum += arr[i];
     }
-    float average = sum/size;
+    float average = sum/(float)size;
     printf("Average: %.2f\n", average);
 
     float median;
