@@ -26,7 +26,6 @@ int main()
         {
             char f_p0[BUFSIZ+1], f_p1[BUFSIZ+1], f_p20[BUFSIZ+1], f_p21[BUFSIZ+1];	
 		
-            // last of the variables to be '\0'
             memset(f_p0, '\0', sizeof(f_p0));	
             memset(f_p1, '\0', sizeof(f_p1));	
             memset(f_p20, '\0', sizeof(f_p20));	

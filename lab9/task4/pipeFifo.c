@@ -11,7 +11,7 @@ int main()
 {
     const char some_data[] = "123";
 	int fd, ffd, data_processed;
-	// ffd = mkfifo("/tmp/task4_fifo", 0777);
+	
     char *buffer = malloc(sizeof(some_data));
 
     fd = open("/tmp/task4_fifo", O_RDWR);
