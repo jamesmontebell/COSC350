@@ -39,7 +39,7 @@ int main(void)
 		}
 		if (sscanf(buf.mtext, "%d%d", &n, &n2) == 2)
 		{
-			printf("Sum of integers (%d, %d): %d\n", n, n2, n + n2);
+			printf("Sum of %d, %d: %d\n", n, n2, n + n2);
 		}
 		else
 		{

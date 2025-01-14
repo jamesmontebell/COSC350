@@ -1,0 +1,4 @@
+Contigous Allocation - stored in continues blocks
+Linked-List Allocation - A block is used for saving data and the next blocks address
+Linked-List with FAT - block info is saved in FAT which is always in memory
+Index-Node - block info is saved in i-node, issues with files growing past limit

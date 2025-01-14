@@ -1,0 +1,16 @@
+Running State - process is currently using cpu
+Ready State - process waiting to use cpu
+Blocked State - process waiting for input 
+
+Transaction 1 - a process blocked for i/o
+Transactino 2 - a process times out
+Transaction 3 - a process is scheduled
+Transaction 4 - a process finished its i/o
+
+Race Condition - two processes running at the same time using shared data, the data used 
+                is determined by who runs when
+Mutual Exclusion - a control property to avoid race conditions 
+Zombie Process - when child finishes before its parent
+
+A child with fork() - has its own memory space
+a child with vfock() - memory space shared with parent

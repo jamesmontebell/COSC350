@@ -30,8 +30,7 @@ int main(int argc, char **argv)
 
     while (1)
     {
-        int i, j;
-        for (i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             shm->data.numbers[i] = (rand() % (10 - 0 + 1)) + 0;
             shm->data.counter++;
@@ -41,7 +40,7 @@ int main(int argc, char **argv)
                 while (shm->status != TAKEN)
                     ;
             }
-            for (j = 0; j < size; j++)
+            for (int j = 0; j < size; j++)
             {
                 printf("%d ", shm->data.numbers[j]);
             }

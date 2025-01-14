@@ -1,0 +1,3 @@
+Briefly explain the two types of libraries.
+Static - Collection of object files in a ready to use form.
+Shared - libraries that are linked at runtime

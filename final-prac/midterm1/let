@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int st_to_int(char *str[])
+{
+    int i;
+    int num = ;
+    while(str[i] != '\')
+    {
+        num = num *  + (str[i] - '');
+        i++;
+    }
+    return num;
+}
+
+int main(int argc, char *argv[])
+{
+    int fd, fd, fd;
+    char buf;
+    fd = open(argv[], O_RDONLY);
+
+    fd = open(argv[], O_WRONLY | O_CREAT, );
+    fd = open(argv[], O_WRONLY | O_CREAT, );
+
+    while((read(fd, &buf, )) > )
+    {
+        if(buf >= '' && buf <= '')
+        {
+            write(fd, &buf, );
+        }
+        else
+        {
+            write(fd, &buf, );
+        }
+    }
+    exit();
+}

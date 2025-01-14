@@ -46,20 +46,19 @@ int main(int argc, char **argv)
 
 	while (1)
 	{
-		int i;
 		down(semid, FULL);
-		//Lock mutex
+		// lock mutex
 		down(semid, MUTEX);
 		item = 0;
-		//Unlock mutex
+		// unlock mutex
 		up(semid, MUTEX);
-		//Increase empty
+		// increase empty
 		up(semid, EMPTY);
-
-		index = semctl(semid, FULL, GETVAL);
+        shm->numbers[index-1] = item;
+        index = semctl(semid, FULL, GETVAL);
 		printf("%d\n", index);
-		shm->numbers[index-1] = item;
-		for(i = 0; i < size; i++){
+        
+		for(int i = 0; i < size; i++){
 			printf("%d ", shm->numbers[i]);
 		}
 		printf("\n");
